@@ -107,8 +107,47 @@ const About = () => {
             </div>
           </section>
 
-          {/* Contact Section */}
+          {/* Languages Section */}
           <section className="mb-16">
+            <h2 className="mb-6 text-2xl font-semibold text-foreground">{t.about.languages}</h2>
+            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+              {languages.map((lang) => (
+                <div
+                  key={lang.name}
+                  className="rounded-lg border border-border bg-card p-4 shadow-sm"
+                >
+                  <p className="font-medium text-card-foreground">
+                    {language === "pt" ? lang.namePt : lang.name}
+                  </p>
+                  <p className="text-sm text-muted-foreground">
+                    {language === "pt" ? lang.levelPt : lang.level}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Certifications Section */}
+          <section className="mb-16">
+            <h2 className="mb-6 text-2xl font-semibold text-foreground">{t.about.certifications}</h2>
+            <div className="space-y-8">
+              {certifications.map((cert) => (
+                <div key={cert.provider}>
+                  <h3 className="mb-3 text-lg font-semibold text-primary">{cert.provider}</h3>
+                  <ul className="space-y-2 pl-4">
+                    {cert.certs.map((item) => (
+                      <li key={item} className="text-base text-card-foreground">
+                        • {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Contact Section */}
+          <section>
             <h2 className="mb-6 text-2xl font-semibold text-foreground">{t.about.contact}</h2>
             <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {contactLinks.map((link) => {
@@ -133,45 +172,6 @@ const About = () => {
                   </a>
                 );
               })}
-            </div>
-          </section>
-
-          {/* Languages Section */}
-          <section className="mb-16">
-            <h2 className="mb-6 text-2xl font-semibold text-foreground">{t.about.languages}</h2>
-            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
-              {languages.map((lang) => (
-                <div
-                  key={lang.name}
-                  className="rounded-lg border border-border bg-card p-4 shadow-sm"
-                >
-                  <p className="font-medium text-card-foreground">
-                    {language === "pt" ? lang.namePt : lang.name}
-                  </p>
-                  <p className="text-sm text-muted-foreground">
-                    {language === "pt" ? lang.levelPt : lang.level}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {/* Certifications Section */}
-          <section>
-            <h2 className="mb-6 text-2xl font-semibold text-foreground">{t.about.certifications}</h2>
-            <div className="space-y-8">
-              {certifications.map((cert) => (
-                <div key={cert.provider}>
-                  <h3 className="mb-3 text-lg font-semibold text-primary">{cert.provider}</h3>
-                  <ul className="space-y-2 pl-4">
-                    {cert.certs.map((item) => (
-                      <li key={item} className="text-base text-card-foreground">
-                        • {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
             </div>
           </section>
         </div>

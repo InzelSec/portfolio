@@ -86,7 +86,7 @@ const Articles = () => {
             {articles.map((article) => (
               <article
                 key={article.id}
-                className="group rounded-lg border border-border bg-card p-6 shadow-sm transition-all hover:border-primary/30 hover:shadow-md"
+                className="group rounded-lg border border-border bg-card p-4 shadow-sm transition-all hover:border-primary/30 hover:shadow-md"
               >
                 <Link to={`/articles/${article.id}`} className="block">
                   {/* Title */}
