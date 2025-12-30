@@ -46,6 +46,45 @@ const languages = [
   { name: "Russian", level: "Basic" },
 ];
 
+const certifications = [
+  {
+    provider: "INE Security",
+    certs: ["eJPT"],
+  },
+  {
+    provider: "Red Hat",
+    certs: ["Fundamentals of Containers, Kubernetes and OpenShift"],
+  },
+  {
+    provider: "TryHackMe",
+    certs: ["Jr Penetration Tester Path"],
+  },
+  {
+    provider: "Google — Google Cybersecurity Professional Certificate",
+    certs: [
+      "Foundations of Cybersecurity",
+      "Play It Safe: Manage Security Risks",
+      "Connect and Protect: Networks and Network Security",
+      "Tools of the Trade: Linux and SQL",
+      "Assets, Threats, and Vulnerabilities",
+      "Sound the Alarm: Detection and Response",
+      "Automate Cybersecurity Tasks with Python",
+      "Put It to Work: Prepare for Cybersecurity Jobs",
+    ],
+  },
+  {
+    provider: "IBM",
+    certs: [
+      "Cybersecurity Compliance Framework & System Administration",
+      "Cybersecurity Roles, Processes & Operating System",
+      "Introduction to Agile Development and Scrum",
+      "Introduction to Cloud Computing",
+      "Introduction to Cybersecurity Tools & Cyber Attacks",
+      "Introduction to DevOps",
+    ],
+  },
+];
+
 const About = () => {
   return (
     <Layout>
@@ -62,30 +101,42 @@ const About = () => {
             <h2 className="mb-6 text-2xl font-semibold text-foreground">Biography</h2>
             <div className="rounded-lg border border-border bg-card p-6 shadow-sm">
               <div className="prose prose-neutral dark:prose-invert max-w-none">
-                <p className="mb-4 text-base leading-relaxed text-card-foreground">
-                  I'm <strong>Alex Insel</strong>, a Software Engineering student and self-taught penetration tester 
-                  focused on offensive security. My journey into cybersecurity began with a curiosity about how systems 
-                  can be exploited and how to defend against such attacks.
-                </p>
-                <p className="mb-4 text-base leading-relaxed text-card-foreground">
-                  Prior to my current studies, I served as a <strong>Reserve Officer (Aspirante R/2)</strong> in the 
-                  Brazilian Army through the NPOR program, where I developed discipline, leadership skills, and a 
-                  methodical approach to problem-solving that translates well into security research.
-                </p>
                 <p className="text-base leading-relaxed text-card-foreground">
-                  Currently, I'm focused on developing <strong>CPTS-level skills</strong> and practical offensive 
-                  security techniques. I enjoy documenting my learning process through articles and building tools 
-                  that help me and others in the security community.
+                  I'm <strong>Alex Insel</strong>, a Brazilian Software Engineering student, former Reserve Officer 
+                  (Aspirante R/2) in the Brazilian Army, and a self-taught penetration tester focused on offensive 
+                  security. This site brings together my work in offensive security and penetration testing as the 
+                  primary focus, alongside software development. You'll find tools I've built, research I've conducted, 
+                  and write-ups documenting my learning process.
                 </p>
               </div>
+            </div>
+          </section>
+
+          {/* Certifications Section */}
+          <section className="mb-16">
+            <h2 className="mb-6 text-2xl font-semibold text-foreground">Certifications & Courses</h2>
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {certifications.map((cert) => (
+                <div
+                  key={cert.provider}
+                  className="rounded-lg border border-border bg-card p-5 shadow-sm"
+                >
+                  <h3 className="mb-3 font-semibold text-primary">{cert.provider}</h3>
+                  <ul className="space-y-1">
+                    {cert.certs.map((item) => (
+                      <li key={item} className="text-sm text-card-foreground">
+                        • {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
             </div>
           </section>
 
           {/* Contact Section */}
           <section className="mb-16">
             <h2 className="mb-6 text-2xl font-semibold text-foreground">Contact</h2>
-
-            {/* Contact Links */}
             <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {contactLinks.map((link) => {
                 const Icon = link.icon;
