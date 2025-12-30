@@ -1,5 +1,5 @@
 import { Layout } from "@/components/Layout";
-import { ExternalLink, Github, Star, Globe } from "lucide-react";
+import { Github } from "lucide-react";
 
 const projects = [
   {
@@ -11,9 +11,7 @@ const projects = [
     purpose:
       "University integrative project aimed at providing practical support for children with attention difficulties through an engaging mobile experience.",
     technologies: ["Android", "Kotlin", "Firebase", "Material Design"],
-    links: {
-      github: "https://github.com/alexinsel/starfocus",
-    },
+    link: "https://github.com/alexinsel/starfocus",
   },
   {
     id: 2,
@@ -24,10 +22,7 @@ const projects = [
     purpose:
       "To help young adults develop better financial habits through intuitive tracking and intelligent insights.",
     technologies: ["React", "TypeScript", "Node.js", "PostgreSQL", "OpenAI API"],
-    links: {
-      github: "https://github.com/alexinsel/orbs",
-      live: "https://orbs.finance",
-    },
+    link: "https://github.com/alexinsel/orbs",
   },
 ];
 
@@ -45,9 +40,12 @@ const Projects = () => {
           {/* Projects Grid */}
           <div className="space-y-8">
             {projects.map((project) => (
-              <article
+              <a
                 key={project.id}
-                className="rounded-lg border border-border bg-card p-6 shadow-sm transition-shadow hover:shadow-md"
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block rounded-lg border border-border bg-card p-6 shadow-sm transition-all duration-300 hover:border-primary/50 hover:shadow-md"
               >
                 {/* Header */}
                 <div className="mb-4 flex items-start justify-between">
@@ -57,29 +55,8 @@ const Projects = () => {
                       {project.title}
                     </h2>
                   </div>
-                  <div className="flex items-center gap-2">
-                    {project.links.github && (
-                      <a
-                        href={project.links.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="rounded-md p-2 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
-                        aria-label="View on GitHub"
-                      >
-                        <Github className="h-5 w-5" />
-                      </a>
-                    )}
-                    {project.links.live && (
-                      <a
-                        href={project.links.live}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="rounded-md p-2 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
-                        aria-label="View live site"
-                      >
-                        <Globe className="h-5 w-5" />
-                      </a>
-                    )}
+                  <div className="flex h-10 w-10 items-center justify-center rounded-md bg-secondary text-muted-foreground transition-colors group-hover:text-foreground">
+                    <Github className="h-5 w-5" />
                   </div>
                 </div>
 
@@ -112,7 +89,7 @@ const Projects = () => {
                     ))}
                   </div>
                 </div>
-              </article>
+              </a>
             ))}
           </div>
         </div>
