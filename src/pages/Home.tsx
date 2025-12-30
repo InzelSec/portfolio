@@ -1,4 +1,5 @@
 import { Layout } from "@/components/Layout";
+import { ArrowRight, BookOpen, Code2 } from "lucide-react";
 
 const Home = () => {
   return (
@@ -6,17 +7,22 @@ const Home = () => {
       <section className="container-custom flex min-h-[calc(100vh-8rem)] flex-col items-center justify-center py-20">
         <div className="animate-fade-in text-center">
           {/* Logo */}
-          <div className="mb-6 flex justify-center">
+          <div className="mb-8 flex justify-center">
             <img 
               src="/logo.png" 
               alt="InzelSec Logo" 
-              className="h-24 w-24 opacity-90"
+              className="h-28 w-28 opacity-90"
             />
           </div>
 
-          {/* Title */}
-          <h1 className="mb-3 text-5xl font-bold tracking-tight text-foreground sm:text-6xl md:text-7xl">
-            Inzel<span className="text-primary">Sec</span>
+          {/* Title with enhanced styling */}
+          <h1 className="mb-4 text-5xl font-bold tracking-tight sm:text-6xl md:text-7xl">
+            <span className="bg-gradient-to-r from-foreground via-foreground to-primary bg-clip-text text-transparent">
+              Inzel
+            </span>
+            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              Sec
+            </span>
           </h1>
 
           {/* Subtitle */}
@@ -29,19 +35,38 @@ const Home = () => {
             This website summarizes and shares my scripts, projects, articles, and what I've learned on my cybersecurity journey.
           </p>
 
-          {/* CTA */}
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+          {/* CTA Cards */}
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 sm:max-w-2xl sm:mx-auto">
             <a
               href="/projects"
-              className="rounded-lg bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+              className="group relative overflow-hidden rounded-xl border border-border bg-card p-6 text-left shadow-sm transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5"
             >
-              View Projects
+              <div className="flex items-start justify-between">
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                  <Code2 className="h-6 w-6" />
+                </div>
+                <ArrowRight className="h-5 w-5 text-muted-foreground transition-transform group-hover:translate-x-1 group-hover:text-primary" />
+              </div>
+              <h3 className="mt-4 text-lg font-semibold text-card-foreground">View Projects</h3>
+              <p className="mt-2 text-sm text-muted-foreground">
+                Explore my security tools, scripts, and development projects.
+              </p>
             </a>
+            
             <a
               href="/articles"
-              className="rounded-lg border border-border bg-secondary px-6 py-3 text-sm font-medium text-secondary-foreground transition-colors hover:bg-secondary/80"
+              className="group relative overflow-hidden rounded-xl border border-border bg-card p-6 text-left shadow-sm transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5"
             >
-              Read Articles
+              <div className="flex items-start justify-between">
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10 text-accent">
+                  <BookOpen className="h-6 w-6" />
+                </div>
+                <ArrowRight className="h-5 w-5 text-muted-foreground transition-transform group-hover:translate-x-1 group-hover:text-primary" />
+              </div>
+              <h3 className="mt-4 text-lg font-semibold text-card-foreground">Read Articles</h3>
+              <p className="mt-2 text-sm text-muted-foreground">
+                Write-ups, tutorials, and insights from my security journey.
+              </p>
             </a>
           </div>
         </div>
