@@ -112,28 +112,6 @@ const About = () => {
             </div>
           </section>
 
-          {/* Certifications Section */}
-          <section className="mb-16">
-            <h2 className="mb-6 text-2xl font-semibold text-foreground">Certifications & Courses</h2>
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {certifications.map((cert) => (
-                <div
-                  key={cert.provider}
-                  className="rounded-lg border border-border bg-card p-5 shadow-sm"
-                >
-                  <h3 className="mb-3 font-semibold text-primary">{cert.provider}</h3>
-                  <ul className="space-y-1">
-                    {cert.certs.map((item) => (
-                      <li key={item} className="text-sm text-card-foreground">
-                        • {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </section>
-
           {/* Contact Section */}
           <section className="mb-16">
             <h2 className="mb-6 text-2xl font-semibold text-foreground">Contact</h2>
@@ -162,7 +140,7 @@ const About = () => {
           </section>
 
           {/* Languages Section */}
-          <section>
+          <section className="mb-16">
             <h2 className="mb-6 text-2xl font-semibold text-foreground">Languages</h2>
             <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
               {languages.map((lang) => (
@@ -172,6 +150,25 @@ const About = () => {
                 >
                   <p className="font-medium text-card-foreground">{lang.name}</p>
                   <p className="text-sm text-muted-foreground">{lang.level}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Certifications Section */}
+          <section>
+            <h2 className="mb-6 text-2xl font-semibold text-foreground">Certifications & Courses</h2>
+            <div className="space-y-8">
+              {certifications.map((cert) => (
+                <div key={cert.provider}>
+                  <h3 className="mb-3 text-lg font-semibold text-primary">{cert.provider}</h3>
+                  <ul className="space-y-2 pl-4">
+                    {cert.certs.map((item) => (
+                      <li key={item} className="text-base text-card-foreground">
+                        • {item}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               ))}
             </div>
