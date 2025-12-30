@@ -69,7 +69,7 @@ export const translations: Record<Language, TranslationSchema> = {
     home: {
       subtitle: "Offensive Security & Pentest",
       description:
-        "This website summarizes and shares my scripts, projects, articles, and what I've learned on my cybersecurity journey.",
+        "Technical portfolio in cybersecurity with projects, scripts, articles, and professional journey.",
       projects: "Projects",
       articles: "Articles",
     },
@@ -132,7 +132,7 @@ export const translations: Record<Language, TranslationSchema> = {
     home: {
       subtitle: "Segurança Ofensiva & Pentest",
       description:
-        "Este site resume e compartilha meus scripts, projetos, artigos e o que aprendi em minha jornada de cibersegurança.",
+        "Portfólio técnico em cibersegurança com projetos, scripts, artigos e trajetória profissional.",
       projects: "Projetos",
       articles: "Artigos",
     },
