@@ -26,13 +26,13 @@ const contactLinks = [
   {
     name: "YouTube",
     key: "youtube" as const,
-    href: "https://youtube.com/@inzelsec",
+    href: "https://www.youtube.com/@InzelSec",
     icon: Youtube,
   },
   {
     name: "Email",
     key: "email" as const,
-    href: "mailto:contact@inzelsec.com",
+    href: "mailto:inzelsec@gmail.com",
     icon: Mail,
   },
 ];

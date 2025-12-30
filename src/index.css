@@ -10,15 +10,15 @@
 
 @layer base {
   :root {
-    /* Light theme - softer gray backgrounds, better contrast */
-    --background: 220 15% 94%;
-    --foreground: 220 25% 10%;
+    /* Light theme - muted gray backgrounds, comfortable contrast */
+    --background: 220 12% 88%;
+    --foreground: 220 30% 8%;
 
-    --card: 220 15% 98%;
-    --card-foreground: 220 25% 10%;
+    --card: 220 12% 94%;
+    --card-foreground: 220 30% 8%;
 
-    --popover: 220 15% 98%;
-    --popover-foreground: 220 25% 10%;
+    --popover: 220 12% 94%;
+    --popover-foreground: 220 30% 8%;
 
     /* Primary: muted blue from logo */
     --primary: 200 70% 45%;

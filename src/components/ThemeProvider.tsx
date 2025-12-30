@@ -12,7 +12,10 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState<Theme>(() => {
     const stored = localStorage.getItem("inzelsec-theme");
-    return (stored as Theme) || "dark";
+    if (stored === "light" || stored === "dark") {
+      return stored;
+    }
+    return "dark"; // Default to dark mode for new users
   });
 
   useEffect(() => {

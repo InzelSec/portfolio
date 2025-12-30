@@ -142,7 +142,7 @@ export const translations: Record<Language, TranslationSchema> = {
       subtitle: "",
       biography: "Biografia",
       biographyText:
-        "Sou <strong>Alex Insel</strong>, estudante brasileiro de Engenharia de Software, Aspirante a Oficial da Reserva (R/2) do Exército Brasileiro, e pentester autodidata focado em segurança ofensiva. Este site reúne meu trabalho em segurança ofensiva e testes de penetração como foco principal, junto com desenvolvimento de software. Você encontrará ferramentas que construí, pesquisas que realizei e write-ups documentando meu processo de aprendizado.",
+        "Sou <strong>Alex Chaves Insel</strong>, um estudante brasileiro de Engenharia de Software, Aspirante a Oficial da Reserva (R/2) do Exército Brasileiro, e pentester autodidata focado em segurança ofensiva. Este site reúne meu trabalho em segurança ofensiva e testes de penetração como foco principal, junto com desenvolvimento de software. Você encontrará ferramentas que construí, pesquisas que realizei e write-ups documentando meu processo de aprendizado.",
       contact: "Contato",
       languages: "Idiomas",
       certifications: "Certificações & Cursos",
