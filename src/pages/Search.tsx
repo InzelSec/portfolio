@@ -1,20 +1,22 @@
 import { Layout } from "@/components/Layout";
+import { useLanguage } from "@/components/LanguageProvider";
 import { Search as SearchIcon, Calendar, Clock } from "lucide-react";
 import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
-import { articles, Article } from "./Articles";
-
-const formatDate = (dateString: string) => {
-  const date = new Date(dateString);
-  return date.toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
-};
+import { articles } from "./Articles";
 
 const Search = () => {
   const [query, setQuery] = useState("");
+  const { t, language } = useLanguage();
+
+  const formatDate = (dateString: string) => {
+    const date = new Date(dateString);
+    return date.toLocaleDateString(language === "pt" ? "pt-BR" : "en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+  };
 
   const filteredArticles = useMemo(() => {
     if (!query.trim()) return [];
@@ -33,9 +35,9 @@ const Search = () => {
       <div className="container-custom py-16">
         <div className="animate-fade-in">
           {/* Page Header */}
-          <h1 className="mb-2 text-4xl font-bold text-foreground">Search</h1>
+          <h1 className="mb-2 text-4xl font-bold text-foreground">{t.search.title}</h1>
           <p className="mb-12 text-lg text-muted-foreground">
-            Find articles by title, content, or tags
+            {t.search.subtitle}
           </p>
 
           {/* Search Input */}
@@ -44,7 +46,7 @@ const Search = () => {
               <SearchIcon className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-muted-foreground" />
               <input
                 type="text"
-                placeholder="Search articles..."
+                placeholder={t.search.placeholder}
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 className="w-full rounded-lg border border-border bg-card py-4 pl-12 pr-4 text-base text-card-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
@@ -56,16 +58,18 @@ const Search = () => {
           <div className="mx-auto max-w-xl">
             {query.trim() === "" ? (
               <p className="text-center text-muted-foreground">
-                Start typing to search through articles
+                {t.search.startTyping}
               </p>
             ) : filteredArticles.length === 0 ? (
               <p className="text-center text-muted-foreground">
-                No articles found for "{query}"
+                {t.search.noResults.replace("{query}", query)}
               </p>
             ) : (
               <div className="space-y-4">
                 <p className="text-sm text-muted-foreground">
-                  Found {filteredArticles.length} result{filteredArticles.length !== 1 ? "s" : ""}
+                  {filteredArticles.length !== 1 
+                    ? t.search.foundResultsPlural.replace("{count}", String(filteredArticles.length))
+                    : t.search.foundResults.replace("{count}", String(filteredArticles.length))}
                 </p>
                 {filteredArticles.map((article) => (
                   <Link

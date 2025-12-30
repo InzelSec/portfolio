@@ -1,49 +1,50 @@
 import { Layout } from "@/components/Layout";
+import { useLanguage } from "@/components/LanguageProvider";
 import { Linkedin, Github, Mail, Youtube } from "lucide-react";
 
 const contactLinks = [
   {
     name: "LinkedIn",
+    key: "linkedin" as const,
     href: "https://www.linkedin.com/in/alex-c-insel-9674b0288/",
     icon: Linkedin,
-    description: "Connect professionally",
   },
   {
     name: "GitHub",
+    key: "github" as const,
     href: "https://github.com/inzelsec",
     icon: Github,
-    description: "Explore my repositories",
   },
   {
     name: "Medium",
+    key: "medium" as const,
     href: "https://medium.com/@inzelsec",
     icon: () => (
       <svg viewBox="0 0 24 24" className="h-5 w-5 fill-current">
         <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z" />
       </svg>
     ),
-    description: "Read my articles",
   },
   {
     name: "YouTube",
+    key: "youtube" as const,
     href: "https://youtube.com/@inzelsec",
     icon: Youtube,
-    description: "Watch my content",
   },
   {
     name: "Email",
+    key: "email" as const,
     href: "mailto:contact@inzelsec.com",
     icon: Mail,
-    description: "Get in touch",
   },
 ];
 
 const languages = [
-  { name: "Portuguese", level: "Native" },
-  { name: "English", level: "Advanced-Fluent" },
-  { name: "Spanish", level: "Intermediate" },
-  { name: "German", level: "Basic-Intermediate" },
-  { name: "Russian", level: "Basic" },
+  { name: "Portuguese", namePt: "Português", level: "Native", levelPt: "Nativo" },
+  { name: "English", namePt: "Inglês", level: "Advanced-Fluent", levelPt: "Avançado-Fluente" },
+  { name: "Spanish", namePt: "Espanhol", level: "Basic-Intermediate", levelPt: "Básico-Intermediário" },
+  { name: "German", namePt: "Alemão", level: "Basic-Intermediate", levelPt: "Básico-Intermediário" },
+  { name: "Russian", namePt: "Russo", level: "Basic", levelPt: "Básico" },
 ];
 
 const certifications = [
@@ -86,35 +87,34 @@ const certifications = [
 ];
 
 const About = () => {
+  const { t, language } = useLanguage();
+
   return (
     <Layout>
       <div className="container-custom py-16">
         <div className="animate-fade-in">
           {/* Page Header */}
-          <h1 className="mb-2 text-4xl font-bold text-foreground">About</h1>
+          <h1 className="mb-2 text-4xl font-bold text-foreground">{t.about.title}</h1>
           <p className="mb-12 text-lg text-muted-foreground">
-            Get to know more about my background and journey
+            {t.about.subtitle}
           </p>
 
           {/* Biography Section */}
           <section className="mb-16">
-            <h2 className="mb-6 text-2xl font-semibold text-foreground">Biography</h2>
+            <h2 className="mb-6 text-2xl font-semibold text-foreground">{t.about.biography}</h2>
             <div className="rounded-lg border border-border bg-card p-6 shadow-sm">
               <div className="prose prose-neutral dark:prose-invert max-w-none">
-                <p className="text-base leading-relaxed text-card-foreground">
-                  I'm <strong>Alex Insel</strong>, a Brazilian Software Engineering student, former Reserve Officer 
-                  (Aspirante R/2) in the Brazilian Army, and a self-taught penetration tester focused on offensive 
-                  security. This site brings together my work in offensive security and penetration testing as the 
-                  primary focus, alongside software development. You'll find tools I've built, research I've conducted, 
-                  and write-ups documenting my learning process.
-                </p>
+                <p 
+                  className="text-base leading-relaxed text-card-foreground"
+                  dangerouslySetInnerHTML={{ __html: t.about.biographyText }}
+                />
               </div>
             </div>
           </section>
 
           {/* Contact Section */}
           <section className="mb-16">
-            <h2 className="mb-6 text-2xl font-semibold text-foreground">Contact</h2>
+            <h2 className="mb-6 text-2xl font-semibold text-foreground">{t.about.contact}</h2>
             <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {contactLinks.map((link) => {
                 const Icon = link.icon;
@@ -131,7 +131,9 @@ const About = () => {
                     </div>
                     <div>
                       <p className="font-medium text-card-foreground">{link.name}</p>
-                      <p className="text-sm text-muted-foreground">{link.description}</p>
+                      <p className="text-sm text-muted-foreground">
+                        {t.about.contactDescriptions[link.key]}
+                      </p>
                     </div>
                   </a>
                 );
@@ -141,15 +143,19 @@ const About = () => {
 
           {/* Languages Section */}
           <section className="mb-16">
-            <h2 className="mb-6 text-2xl font-semibold text-foreground">Languages</h2>
+            <h2 className="mb-6 text-2xl font-semibold text-foreground">{t.about.languages}</h2>
             <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
               {languages.map((lang) => (
                 <div
                   key={lang.name}
                   className="rounded-lg border border-border bg-card p-4 shadow-sm"
                 >
-                  <p className="font-medium text-card-foreground">{lang.name}</p>
-                  <p className="text-sm text-muted-foreground">{lang.level}</p>
+                  <p className="font-medium text-card-foreground">
+                    {language === "pt" ? lang.namePt : lang.name}
+                  </p>
+                  <p className="text-sm text-muted-foreground">
+                    {language === "pt" ? lang.levelPt : lang.level}
+                  </p>
                 </div>
               ))}
             </div>
@@ -157,7 +163,7 @@ const About = () => {
 
           {/* Certifications Section */}
           <section>
-            <h2 className="mb-6 text-2xl font-semibold text-foreground">Certifications & Courses</h2>
+            <h2 className="mb-6 text-2xl font-semibold text-foreground">{t.about.certifications}</h2>
             <div className="space-y-8">
               {certifications.map((cert) => (
                 <div key={cert.provider}>

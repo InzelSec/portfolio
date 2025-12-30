@@ -1,19 +1,22 @@
 import { Link, useLocation } from "react-router-dom";
 import { ThemeToggle } from "./ThemeToggle";
+import { LanguageToggle } from "./LanguageToggle";
+import { useLanguage } from "./LanguageProvider";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 
-const navLinks = [
-  { name: "Home", path: "/" },
-  { name: "About", path: "/about" },
-  { name: "Projects", path: "/projects" },
-  { name: "Articles", path: "/articles" },
-  { name: "Search", path: "/search" },
+const navPaths = [
+  { key: "home" as const, path: "/" },
+  { key: "about" as const, path: "/about" },
+  { key: "projects" as const, path: "/projects" },
+  { key: "articles" as const, path: "/articles" },
+  { key: "search" as const, path: "/search" },
 ];
 
 export function Header() {
   const location = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { t } = useLanguage();
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
@@ -26,7 +29,7 @@ export function Header() {
 
         {/* Desktop Navigation */}
         <nav className="hidden items-center gap-1 md:flex">
-          {navLinks.map((link) => (
+          {navPaths.map((link) => (
             <Link
               key={link.path}
               to={link.path}
@@ -36,16 +39,18 @@ export function Header() {
                   : "text-muted-foreground hover:bg-secondary/50 hover:text-foreground"
               }`}
             >
-              {link.name}
+              {t.nav[link.key]}
             </Link>
           ))}
-          <div className="ml-2">
+          <div className="ml-2 flex items-center gap-2">
+            <LanguageToggle />
             <ThemeToggle />
           </div>
         </nav>
 
         {/* Mobile Menu Button */}
         <div className="flex items-center gap-2 md:hidden">
+          <LanguageToggle />
           <ThemeToggle />
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -59,7 +64,7 @@ export function Header() {
       {/* Mobile Navigation */}
       {mobileMenuOpen && (
         <nav className="border-t border-border bg-background px-4 py-3 md:hidden">
-          {navLinks.map((link) => (
+          {navPaths.map((link) => (
             <Link
               key={link.path}
               to={link.path}
@@ -70,7 +75,7 @@ export function Header() {
                   : "text-muted-foreground hover:bg-secondary/50 hover:text-foreground"
               }`}
             >
-              {link.name}
+              {t.nav[link.key]}
             </Link>
           ))}
         </nav>

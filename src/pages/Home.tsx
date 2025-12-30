@@ -1,7 +1,10 @@
 import { Layout } from "@/components/Layout";
+import { useLanguage } from "@/components/LanguageProvider";
 import { ArrowRight, BookOpen, Code2 } from "lucide-react";
 
 const Home = () => {
+  const { t } = useLanguage();
+
   return (
     <Layout>
       <section className="container-custom flex min-h-[calc(100vh-8rem)] flex-col items-center justify-center py-20">
@@ -23,12 +26,12 @@ const Home = () => {
 
           {/* Subtitle */}
           <p className="mb-6 text-xl font-medium text-primary sm:text-2xl">
-            Offensive Security & Pentest
+            {t.home.subtitle}
           </p>
 
           {/* Description */}
           <p className="mx-auto max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-            This website summarizes and shares my scripts, projects, articles, and what I've learned on my cybersecurity journey.
+            {t.home.description}
           </p>
 
           {/* CTA Cards */}
@@ -42,7 +45,7 @@ const Home = () => {
                   <Code2 className="h-7 w-7" />
                 </div>
               </div>
-              <h3 className="text-xl font-semibold text-card-foreground">Projects</h3>
+              <h3 className="text-xl font-semibold text-card-foreground">{t.home.projects}</h3>
               <ArrowRight className="mx-auto mt-4 h-5 w-5 text-muted-foreground transition-transform group-hover:translate-x-1 group-hover:text-primary" />
             </a>
             
@@ -55,7 +58,7 @@ const Home = () => {
                   <BookOpen className="h-7 w-7" />
                 </div>
               </div>
-              <h3 className="text-xl font-semibold text-card-foreground">Articles</h3>
+              <h3 className="text-xl font-semibold text-card-foreground">{t.home.articles}</h3>
               <ArrowRight className="mx-auto mt-4 h-5 w-5 text-muted-foreground transition-transform group-hover:translate-x-1 group-hover:text-primary" />
             </a>
           </div>
