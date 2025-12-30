@@ -3,14 +3,15 @@ import { Footer } from "./Footer";
 
 interface LayoutProps {
   children: React.ReactNode;
+  showFooterBorder?: boolean;
 }
 
-export function Layout({ children }: LayoutProps) {
+export function Layout({ children, showFooterBorder = true }: LayoutProps) {
   return (
     <div className="flex min-h-screen flex-col">
       <Header />
       <main className="flex-1">{children}</main>
-      <Footer />
+      <Footer showBorder={showFooterBorder} />
     </div>
   );
 }

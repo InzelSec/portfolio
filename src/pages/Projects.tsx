@@ -6,37 +6,36 @@ const projects = [
   {
     id: 1,
     title: "Net Listener",
-    emoji: "🎧",
     description:
       "A Python implementation of a basic reverse shell listener, similar to a Netcat listener. The script listens for incoming reverse shell connections and provides an interactive command interface once a connection is established.\n\nBuilt to reinforce concepts related to reverse shells, command execution, and post-exploitation workflows in controlled environments.",
     descriptionPt:
       "Uma implementação em Python de um listener básico de reverse shell, similar ao Netcat. O script escuta conexões de reverse shell e fornece uma interface de comando interativa após a conexão ser estabelecida.\n\nConstruído para reforçar conceitos relacionados a reverse shells, execução de comandos e fluxos de pós-exploração em ambientes controlados.",
+    technologies: ["Python"],
     link: "https://github.com/InzelSec/net-listener/blob/main/README.md",
   },
   {
     id: 2,
     title: "Port Scanner",
-    emoji: "🔍",
     description:
       "A Python implementation of a simple port scanner, inspired by tools like Nmap. It supports scanning common ports, specific port lists, and port ranges, with configurable aggressiveness levels similar to Nmap's -T timing options.\n\nDesigned for learning and practical understanding of TCP port scanning behavior and network reconnaissance fundamentals.",
     descriptionPt:
       "Uma implementação em Python de um scanner de portas simples, inspirado em ferramentas como Nmap. Suporta escaneamento de portas comuns, listas específicas e intervalos de portas, com níveis de agressividade configuráveis similares às opções de timing -T do Nmap.\n\nProjetado para aprendizado e compreensão prática do comportamento de escaneamento de portas TCP e fundamentos de reconhecimento de rede.",
+    technologies: ["Python"],
     link: "https://github.com/InzelSec/port-scanner/blob/main/README.md",
   },
   {
     id: 3,
     title: "ICMP Ping",
-    emoji: "📡",
     description:
       "A Python implementation of the classic ping command built using raw sockets. The tool sends ICMP Echo Requests and displays detailed responses including sequence number (icmp_seq), time-to-live (ttl), and round-trip time (RTT) in milliseconds.",
     descriptionPt:
       "Uma implementação em Python do comando ping clássico construído usando raw sockets. A ferramenta envia ICMP Echo Requests e exibe respostas detalhadas incluindo número de sequência (icmp_seq), time-to-live (ttl) e tempo de ida e volta (RTT) em milissegundos.",
+    technologies: ["Python"],
     link: "https://github.com/InzelSec/icmp-ping/blob/main/README.md",
   },
   {
     id: 4,
     title: "Aurora",
-    emoji: "🌅",
     description:
       "A desktop application designed to support professors in managing semester-long academic projects in higher education. The platform centralizes course organization, student grouping, grading, attendance tracking, and academic documentation in a single environment.",
     descriptionPt:
@@ -50,7 +49,6 @@ const projects = [
   {
     id: 5,
     title: "StarFocus",
-    emoji: "⭐",
     description:
       "An Android application designed to help children with ADHD organize their tasks using gamification techniques. Features include task management, reward systems, and progress tracking.",
     descriptionPt:
@@ -65,7 +63,6 @@ const projects = [
   {
     id: 6,
     title: "Orbs",
-    emoji: "🪐",
     description:
       "A web application for personal finance organization targeted at young adults. Includes features for tracking goals, expenses, income, and provides AI-based financial recommendations.",
     descriptionPt:
@@ -87,10 +84,18 @@ const Projects = () => {
       <div className="container-custom py-16">
         <div className="animate-fade-in">
           {/* Page Header */}
-          <h1 className="mb-2 text-4xl font-bold text-foreground">{t.projects.title}</h1>
-          <p className="mb-12 text-lg text-muted-foreground">
-            {t.projects.subtitle}
-          </p>
+          <div className="mb-12 flex items-center justify-between">
+            <h1 className="text-4xl font-bold text-foreground">{t.projects.title}</h1>
+            <a
+              href="https://github.com/inzelsec"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 rounded-lg border border-border bg-card px-4 py-2 text-sm font-medium text-muted-foreground transition-all hover:border-primary/50 hover:text-foreground"
+            >
+              <Github className="h-5 w-5" />
+              GitHub
+            </a>
+          </div>
 
           {/* Projects Grid */}
           <div className="space-y-8">
@@ -104,12 +109,9 @@ const Projects = () => {
               >
                 {/* Header */}
                 <div className="mb-4 flex items-start justify-between">
-                  <div className="flex items-center gap-3">
-                    <span className="text-3xl">{project.emoji}</span>
-                    <h2 className="text-2xl font-semibold text-card-foreground">
-                      {project.title}
-                    </h2>
-                  </div>
+                  <h2 className="text-2xl font-semibold text-card-foreground">
+                    {project.title}
+                  </h2>
                   <div className="flex h-10 w-10 items-center justify-center rounded-md bg-secondary text-muted-foreground transition-colors group-hover:text-foreground">
                     <Github className="h-5 w-5" />
                   </div>

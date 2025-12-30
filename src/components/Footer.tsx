@@ -1,4 +1,5 @@
 import { Linkedin, Github, Mail, Youtube } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const socialLinks = [
   { name: "LinkedIn", href: "https://www.linkedin.com/in/alex-c-insel-9674b0288/", icon: Linkedin },
@@ -12,9 +13,13 @@ const socialLinks = [
   { name: "Email", href: "mailto:contact@inzelsec.com", icon: Mail },
 ];
 
-export function Footer() {
+interface FooterProps {
+  showBorder?: boolean;
+}
+
+export function Footer({ showBorder = true }: FooterProps) {
   return (
-    <footer className="border-t border-border py-8">
+    <footer className={cn("py-8", showBorder && "border-t border-border")}>
       <div className="container-custom">
         <div className="flex flex-col items-center gap-4">
           {/* Social Links */}
