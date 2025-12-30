@@ -22,7 +22,7 @@ export const articles: Article[] = [
       "A guide focused on collecting essential Linux information (system, services, permissions, etc.) to facilitate privilege escalation.",
     date: "2025-12-22",
     tags: ["PrivEsc"],
-    link: "https://medium.com/@inzelsec/linux-privilege-escalation-manual-enumeration-information-gathering-e071db8d0f6b",
+    link: "https://medium.com/@inzelsec/linux-privilege-escalation-manual-enumeration-information-gathering-2189a9b3e6bf",
   },
   {
     id: "linux-privesc-escaping-shells",
@@ -66,7 +66,7 @@ export const articles: Article[] = [
       "Complete solution of the \"Boiler\" CTF challenge on TryHackMe with service enumeration and exploitation steps.",
     date: "2025-10-08",
     tags: ["TryHackMe", "CTF"],
-    link: "https://medium.com/@inzelsec/boiler-ctf-tryhackme-walkthrough-c8d1b4d0b9ee",
+    link: "https://medium.com/@inzelsec/boiler-ctf-tryhackme-walkthrough-9b6edb596c48",
   },
   {
     id: "wonderland-thm",
@@ -110,7 +110,7 @@ export const articles: Article[] = [
       "Complete walkthrough of the \"Thompson\" machine, covering enumeration and exploitation to capture the flags.",
     date: "2025-09-27",
     tags: ["TryHackMe", "CTF"],
-    link: "https://medium.com/@inzelsec/thompson-tryhackme-walkthrough-b3b8c6e2e2fc",
+    link: "https://medium.com/@inzelsec/thompson-tryhackme-walkthrough-794841f0e227",
   },
   {
     id: "tomghost-thm",
@@ -121,7 +121,7 @@ export const articles: Article[] = [
       "Solution for the \"tomghost\" room on TryHackMe, including port enumeration and identifying exploitation vectors.",
     date: "2025-09-26",
     tags: ["TryHackMe", "CTF"],
-    link: "https://medium.com/@inzelsec/tomghost-tryhackme-walkthrough-5a71b87bf04b",
+    link: "https://medium.com/@inzelsec/tomghost-tryhackme-walkthrough-ff4491e7f120",
   },
   {
     id: "cyborg-thm",

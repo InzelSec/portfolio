@@ -12,7 +12,10 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [language, setLanguage] = useState<Language>(() => {
     const stored = localStorage.getItem("inzelsec-language");
-    return (stored as Language) || "en";
+    if (stored === "en" || stored === "pt") {
+      return stored;
+    }
+    return "pt"; // Default to Portuguese for new users
   });
 
   const toggleLanguage = useCallback(() => {

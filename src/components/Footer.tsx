@@ -7,8 +7,8 @@ const socialLinks = [
   { name: "Medium", href: "https://medium.com/@inzelsec", icon: () => (
     <span className="text-base font-bold">M</span>
   ) },
-  { name: "YouTube", href: "https://youtube.com/@inzelsec", icon: Youtube },
-  { name: "Email", href: "mailto:contact@inzelsec.com", icon: Mail },
+  { name: "YouTube", href: "https://www.youtube.com/@InzelSec", icon: Youtube },
+  { name: "Email", href: "mailto:inzelsec@gmail.com", icon: Mail },
 ];
 
 interface FooterProps {
