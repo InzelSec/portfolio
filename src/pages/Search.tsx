@@ -1,8 +1,7 @@
 import { Layout } from "@/components/Layout";
 import { useLanguage } from "@/components/LanguageProvider";
-import { Search as SearchIcon, Calendar, Clock } from "lucide-react";
+import { Search as SearchIcon, Calendar } from "lucide-react";
 import { useState, useMemo } from "react";
-import { Link } from "react-router-dom";
 import { articles } from "./Articles";
 
 const Search = () => {
@@ -18,6 +17,10 @@ const Search = () => {
     });
   };
 
+  const getSummary = (article: { summaryPt: string; summaryEn: string }) => {
+    return language === "pt" ? article.summaryPt : article.summaryEn;
+  };
+
   const filteredArticles = useMemo(() => {
     if (!query.trim()) return [];
     
@@ -25,10 +28,10 @@ const Search = () => {
     return articles.filter(
       (article) =>
         article.title.toLowerCase().includes(searchTerms) ||
-        article.summary.toLowerCase().includes(searchTerms) ||
+        getSummary(article).toLowerCase().includes(searchTerms) ||
         article.tags.some((tag) => tag.toLowerCase().includes(searchTerms))
     );
-  }, [query]);
+  }, [query, language]);
 
   return (
     <Layout>
@@ -72,9 +75,11 @@ const Search = () => {
                     : t.search.foundResults.replace("{count}", String(filteredArticles.length))}
                 </p>
                 {filteredArticles.map((article) => (
-                  <Link
+                  <a
                     key={article.id}
-                    to={`/articles/${article.id}`}
+                    href={article.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="block rounded-lg border border-border bg-card p-4 transition-all hover:border-primary/30 hover:shadow-sm"
                   >
                     <h3 className="mb-1 font-medium text-card-foreground">
@@ -85,12 +90,8 @@ const Search = () => {
                         <Calendar className="h-3 w-3" />
                         {formatDate(article.date)}
                       </span>
-                      <span className="flex items-center gap-1">
-                        <Clock className="h-3 w-3" />
-                        {article.readTime}
-                      </span>
                     </div>
-                  </Link>
+                  </a>
                 ))}
               </div>
             )}
