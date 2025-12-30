@@ -1,4 +1,5 @@
 import { Layout } from "@/components/Layout";
+import { useLanguage } from "@/components/LanguageProvider";
 import { Github } from "lucide-react";
 
 const projects = [
@@ -8,6 +9,8 @@ const projects = [
     emoji: "🎧",
     description:
       "A Python implementation of a basic reverse shell listener, similar to a Netcat listener. The script listens for incoming reverse shell connections and provides an interactive command interface once a connection is established.\n\nBuilt to reinforce concepts related to reverse shells, command execution, and post-exploitation workflows in controlled environments.",
+    descriptionPt:
+      "Uma implementação em Python de um listener básico de reverse shell, similar ao Netcat. O script escuta conexões de reverse shell e fornece uma interface de comando interativa após a conexão ser estabelecida.\n\nConstruído para reforçar conceitos relacionados a reverse shells, execução de comandos e fluxos de pós-exploração em ambientes controlados.",
     link: "https://github.com/InzelSec/net-listener/blob/main/README.md",
   },
   {
@@ -16,6 +19,8 @@ const projects = [
     emoji: "🔍",
     description:
       "A Python implementation of a simple port scanner, inspired by tools like Nmap. It supports scanning common ports, specific port lists, and port ranges, with configurable aggressiveness levels similar to Nmap's -T timing options.\n\nDesigned for learning and practical understanding of TCP port scanning behavior and network reconnaissance fundamentals.",
+    descriptionPt:
+      "Uma implementação em Python de um scanner de portas simples, inspirado em ferramentas como Nmap. Suporta escaneamento de portas comuns, listas específicas e intervalos de portas, com níveis de agressividade configuráveis similares às opções de timing -T do Nmap.\n\nProjetado para aprendizado e compreensão prática do comportamento de escaneamento de portas TCP e fundamentos de reconhecimento de rede.",
     link: "https://github.com/InzelSec/port-scanner/blob/main/README.md",
   },
   {
@@ -24,6 +29,8 @@ const projects = [
     emoji: "📡",
     description:
       "A Python implementation of the classic ping command built using raw sockets. The tool sends ICMP Echo Requests and displays detailed responses including sequence number (icmp_seq), time-to-live (ttl), and round-trip time (RTT) in milliseconds.",
+    descriptionPt:
+      "Uma implementação em Python do comando ping clássico construído usando raw sockets. A ferramenta envia ICMP Echo Requests e exibe respostas detalhadas incluindo número de sequência (icmp_seq), time-to-live (ttl) e tempo de ida e volta (RTT) em milissegundos.",
     link: "https://github.com/InzelSec/icmp-ping/blob/main/README.md",
   },
   {
@@ -32,8 +39,12 @@ const projects = [
     emoji: "🌅",
     description:
       "A desktop application designed to support professors in managing semester-long academic projects in higher education. The platform centralizes course organization, student grouping, grading, attendance tracking, and academic documentation in a single environment.",
+    descriptionPt:
+      "Uma aplicação desktop projetada para apoiar professores na gestão de projetos acadêmicos semestrais no ensino superior. A plataforma centraliza organização de cursos, agrupamento de alunos, notas, controle de presença e documentação acadêmica em um único ambiente.",
     purpose:
       "To streamline the academic management of semester projects by providing professors and coordinators with structured tools for planning, evaluation, and collaboration, reducing manual processes and improving institutional oversight.",
+    purposePt:
+      "Otimizar a gestão acadêmica de projetos semestrais fornecendo a professores e coordenadores ferramentas estruturadas para planejamento, avaliação e colaboração, reduzindo processos manuais e melhorando a supervisão institucional.",
     link: "https://github.com/laislemos801/Aurora/blob/main/README.md",
   },
   {
@@ -42,8 +53,12 @@ const projects = [
     emoji: "⭐",
     description:
       "An Android application designed to help children with ADHD organize their tasks using gamification techniques. Features include task management, reward systems, and progress tracking.",
+    descriptionPt:
+      "Uma aplicação Android projetada para ajudar crianças com TDAH a organizar suas tarefas usando técnicas de gamificação. Inclui gerenciamento de tarefas, sistemas de recompensa e acompanhamento de progresso.",
     purpose:
       "University integrative project aimed at providing practical support for children with attention difficulties through an engaging mobile experience.",
+    purposePt:
+      "Projeto integrador universitário voltado para fornecer suporte prático a crianças com dificuldades de atenção através de uma experiência mobile envolvente.",
     technologies: ["Android", "Kotlin", "Firebase", "Material Design"],
     link: "https://github.com/PI4-T1/StarFocus/blob/main/README.md",
   },
@@ -53,22 +68,28 @@ const projects = [
     emoji: "🪐",
     description:
       "A web application for personal finance organization targeted at young adults. Includes features for tracking goals, expenses, income, and provides AI-based financial recommendations.",
+    descriptionPt:
+      "Uma aplicação web para organização de finanças pessoais voltada para jovens adultos. Inclui recursos para acompanhamento de metas, despesas, receitas e fornece recomendações financeiras baseadas em IA.",
     purpose:
       "To help young adults develop better financial habits through intuitive tracking and intelligent insights.",
+    purposePt:
+      "Ajudar jovens adultos a desenvolver melhores hábitos financeiros através de acompanhamento intuitivo e insights inteligentes.",
     technologies: ["React", "TypeScript", "Node.js", "PostgreSQL", "OpenAI API"],
     link: "https://github.com/Luyzao/Orbs-FrontEnd/blob/main/README.md",
   },
 ];
 
 const Projects = () => {
+  const { t, language } = useLanguage();
+
   return (
     <Layout>
       <div className="container-custom py-16">
         <div className="animate-fade-in">
           {/* Page Header */}
-          <h1 className="mb-2 text-4xl font-bold text-foreground">Projects</h1>
+          <h1 className="mb-2 text-4xl font-bold text-foreground">{t.projects.title}</h1>
           <p className="mb-12 text-lg text-muted-foreground">
-            A collection of projects I've built and contributed to
+            {t.projects.subtitle}
           </p>
 
           {/* Projects Grid */}
@@ -96,16 +117,18 @@ const Projects = () => {
 
                 {/* Description */}
                 <p className="mb-4 whitespace-pre-line text-base leading-relaxed text-card-foreground">
-                  {project.description}
+                  {language === "pt" && project.descriptionPt ? project.descriptionPt : project.description}
                 </p>
 
                 {/* Purpose (if exists) */}
                 {project.purpose && (
                   <div className="mb-4">
                     <h3 className="mb-1 text-sm font-medium uppercase tracking-wide text-muted-foreground">
-                      Purpose
+                      {t.projects.purpose}
                     </h3>
-                    <p className="text-sm text-card-foreground">{project.purpose}</p>
+                    <p className="text-sm text-card-foreground">
+                      {language === "pt" && project.purposePt ? project.purposePt : project.purpose}
+                    </p>
                   </div>
                 )}
 
@@ -113,7 +136,7 @@ const Projects = () => {
                 {project.technologies && project.technologies.length > 0 && (
                   <div>
                     <h3 className="mb-2 text-sm font-medium uppercase tracking-wide text-muted-foreground">
-                      Technologies
+                      {t.projects.technologies}
                     </h3>
                     <div className="flex flex-wrap gap-2">
                       {project.technologies.map((tech) => (

@@ -1,4 +1,5 @@
 import { Layout } from "@/components/Layout";
+import { useLanguage } from "@/components/LanguageProvider";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -50,24 +51,26 @@ export const articles: Article[] = [
   },
 ];
 
-const formatDate = (dateString: string) => {
-  const date = new Date(dateString);
-  return date.toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
-};
-
 const Articles = () => {
+  const { t, language } = useLanguage();
+
+  const formatDate = (dateString: string) => {
+    const date = new Date(dateString);
+    return date.toLocaleDateString(language === "pt" ? "pt-BR" : "en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+  };
+
   return (
     <Layout>
       <div className="container-custom py-16">
         <div className="animate-fade-in">
           {/* Page Header */}
-          <h1 className="mb-2 text-4xl font-bold text-foreground">Articles</h1>
+          <h1 className="mb-2 text-4xl font-bold text-foreground">{t.articles.title}</h1>
           <p className="mb-12 text-lg text-muted-foreground">
-            Write-ups, tutorials, and notes from my security research
+            {t.articles.subtitle}
           </p>
 
           {/* Articles List */}
@@ -111,7 +114,7 @@ const Articles = () => {
                       </span>
                     ))}
                     <span className="ml-auto flex items-center gap-1 text-sm font-medium text-primary opacity-0 transition-opacity group-hover:opacity-100">
-                      Read more <ArrowRight className="h-4 w-4" />
+                      {t.articles.readMore} <ArrowRight className="h-4 w-4" />
                     </span>
                   </div>
                 </Link>
