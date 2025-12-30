@@ -17,12 +17,8 @@ const Home = () => {
 
           {/* Title with enhanced styling */}
           <h1 className="mb-4 text-5xl font-bold tracking-tight sm:text-6xl md:text-7xl">
-            <span className="bg-gradient-to-r from-foreground via-foreground to-primary bg-clip-text text-transparent">
-              Inzel
-            </span>
-            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              Sec
-            </span>
+            <span className="text-foreground">Inzel</span>
+            <span className="text-primary">Sec</span>
           </h1>
 
           {/* Subtitle */}
@@ -39,34 +35,28 @@ const Home = () => {
           <div className="mt-12 grid gap-6 sm:grid-cols-2 sm:max-w-2xl sm:mx-auto">
             <a
               href="/projects"
-              className="group relative overflow-hidden rounded-xl border border-border bg-card p-6 text-left shadow-sm transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5"
+              className="group relative overflow-hidden rounded-xl border border-border bg-card p-8 text-center shadow-sm transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5"
             >
-              <div className="flex items-start justify-between">
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                  <Code2 className="h-6 w-6" />
+              <div className="flex justify-center mb-4">
+                <div className="flex h-14 w-14 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                  <Code2 className="h-7 w-7" />
                 </div>
-                <ArrowRight className="h-5 w-5 text-muted-foreground transition-transform group-hover:translate-x-1 group-hover:text-primary" />
               </div>
-              <h3 className="mt-4 text-lg font-semibold text-card-foreground">View Projects</h3>
-              <p className="mt-2 text-sm text-muted-foreground">
-                Explore my security tools, scripts, and development projects.
-              </p>
+              <h3 className="text-xl font-semibold text-card-foreground">Projects</h3>
+              <ArrowRight className="mx-auto mt-4 h-5 w-5 text-muted-foreground transition-transform group-hover:translate-x-1 group-hover:text-primary" />
             </a>
             
             <a
               href="/articles"
-              className="group relative overflow-hidden rounded-xl border border-border bg-card p-6 text-left shadow-sm transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5"
+              className="group relative overflow-hidden rounded-xl border border-border bg-card p-8 text-center shadow-sm transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5"
             >
-              <div className="flex items-start justify-between">
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10 text-accent">
-                  <BookOpen className="h-6 w-6" />
+              <div className="flex justify-center mb-4">
+                <div className="flex h-14 w-14 items-center justify-center rounded-lg bg-accent/10 text-accent">
+                  <BookOpen className="h-7 w-7" />
                 </div>
-                <ArrowRight className="h-5 w-5 text-muted-foreground transition-transform group-hover:translate-x-1 group-hover:text-primary" />
               </div>
-              <h3 className="mt-4 text-lg font-semibold text-card-foreground">Read Articles</h3>
-              <p className="mt-2 text-sm text-muted-foreground">
-                Write-ups, tutorials, and insights from my security journey.
-              </p>
+              <h3 className="text-xl font-semibold text-card-foreground">Articles</h3>
+              <ArrowRight className="mx-auto mt-4 h-5 w-5 text-muted-foreground transition-transform group-hover:translate-x-1 group-hover:text-primary" />
             </a>
           </div>
         </div>
