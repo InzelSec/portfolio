@@ -23,7 +23,7 @@ export function Header() {
       <div className="container-custom flex h-16 items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2.5">
-          <img src="/logo.png" alt="InzelSec" className="h-8 w-8" />
+          <img src="/logo.png" alt="InzelSec" className="h-8 w-8 rounded-md" />
           <span className="text-lg font-semibold text-foreground">InzelSec</span>
         </Link>
 

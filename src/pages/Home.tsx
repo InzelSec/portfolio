@@ -25,7 +25,7 @@ const Home = () => {
             <img 
               src="/logo.png" 
               alt="InzelSec Logo" 
-              className="h-24 w-24 opacity-90"
+              className="h-24 w-24 rounded-lg opacity-90"
             />
           </div>
 
