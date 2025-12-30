@@ -10,25 +10,25 @@
 
 @layer base {
   :root {
-    /* Light theme - soft gray backgrounds, comfortable contrast */
-    --background: 220 20% 97%;
+    /* Light theme - softer gray backgrounds, better contrast */
+    --background: 220 15% 94%;
     --foreground: 220 25% 10%;
 
-    --card: 220 20% 100%;
+    --card: 220 15% 98%;
     --card-foreground: 220 25% 10%;
 
-    --popover: 220 20% 100%;
+    --popover: 220 15% 98%;
     --popover-foreground: 220 25% 10%;
 
     /* Primary: muted blue from logo */
     --primary: 200 70% 45%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 15% 92%;
-    --secondary-foreground: 220 25% 15%;
+    --secondary: 220 12% 88%;
+    --secondary-foreground: 220 25% 12%;
 
-    --muted: 220 15% 90%;
-    --muted-foreground: 220 10% 45%;
+    --muted: 220 12% 86%;
+    --muted-foreground: 220 15% 32%;
 
     /* Accent: cyan from logo */
     --accent: 185 65% 50%;
