@@ -99,10 +99,11 @@ const About = () => {
             <h2 className="mb-6 text-2xl font-semibold text-foreground">{t.about.biography}</h2>
             <div className="rounded-lg border border-border bg-card p-6 shadow-sm">
               <div className="prose prose-neutral dark:prose-invert max-w-none">
-                <p 
-                  className="text-base leading-relaxed text-card-foreground"
-                  dangerouslySetInnerHTML={{ __html: t.about.biographyText }}
-                />
+                <p className="text-base leading-relaxed text-card-foreground">
+                  {t.about.biographyTextBefore}
+                  <strong>{t.about.biographyName}</strong>
+                  {t.about.biographyTextAfter}
+                </p>
               </div>
             </div>
           </section>
