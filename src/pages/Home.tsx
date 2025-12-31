@@ -23,7 +23,7 @@ const Home = () => {
           {/* Logo */}
           <div className="mb-6 flex justify-center">
             <img 
-              src="/logo.png" 
+              src={`${import.meta.env.BASE_URL}logo.png`} 
               alt="InzelSec Logo" 
               className="h-24 w-24 rounded-xl opacity-90"
             />
