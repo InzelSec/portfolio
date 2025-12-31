@@ -28,6 +28,7 @@ type TranslationSchema = {
       linkedin: string;
       github: string;
       medium: string;
+      tryhackme: string;
       youtube: string;
       email: string;
     };
@@ -90,6 +91,7 @@ export const translations: Record<Language, TranslationSchema> = {
         linkedin: "Connect professionally",
         github: "Explore my repositories",
         medium: "Read my articles",
+        tryhackme: "View my CTF progress",
         youtube: "Watch my content",
         email: "Get in touch",
       },
@@ -154,6 +156,7 @@ export const translations: Record<Language, TranslationSchema> = {
         linkedin: "Conecte-se profissionalmente",
         github: "Explore meus repositórios",
         medium: "Leia meus artigos",
+        tryhackme: "Veja meu progresso em CTFs",
         youtube: "Assista meu conteúdo",
         email: "Entre em contato",
       },
