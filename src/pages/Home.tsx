@@ -61,7 +61,7 @@ const Home = () => {
             </a>
 
             <a
-              href="/projects"
+              href="/portfolio/#/projects"
               className="group relative overflow-hidden rounded-xl border border-border bg-card p-6 text-center shadow-sm transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5"
             >
               <div className="flex justify-center mb-3">
@@ -74,7 +74,7 @@ const Home = () => {
             </a>
             
             <a
-              href="/articles"
+              href="/portfolio/#/articles"
               className="group relative overflow-hidden rounded-xl border border-border bg-card p-6 text-center shadow-sm transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5"
             >
               <div className="flex justify-center mb-3">
