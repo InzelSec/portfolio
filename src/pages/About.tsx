@@ -24,6 +24,14 @@ const contactLinks = [
     ),
   },
   {
+    name: "TryHackMe",
+    key: "tryhackme" as const,
+    href: "https://tryhackme.com/p/InzelSec",
+    icon: () => (
+      <span className="text-sm font-bold">THM</span>
+    ),
+  },
+  {
     name: "YouTube",
     key: "youtube" as const,
     href: "https://www.youtube.com/@InzelSec",

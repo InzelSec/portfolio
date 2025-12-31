@@ -7,6 +7,9 @@ const socialLinks = [
   { name: "Medium", href: "https://medium.com/@inzelsec", icon: () => (
     <span className="text-base font-bold">M</span>
   ) },
+  { name: "TryHackMe", href: "https://tryhackme.com/p/InzelSec", icon: () => (
+    <span className="text-sm font-bold">THM</span>
+  ) },
   { name: "YouTube", href: "https://www.youtube.com/@InzelSec", icon: Youtube },
   { name: "Email", href: "mailto:inzelsec@gmail.com", icon: Mail },
 ];
