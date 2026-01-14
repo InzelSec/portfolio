@@ -4,6 +4,15 @@ import { Github } from "lucide-react";
 
 const projects = [
   {
+    id: 0,
+    title: "Easy Command",
+    description:
+      "A structured repository of offensive security command templates with dynamic variable substitution for ethical penetration testing. Covers web enumeration, reverse shells, and privilege escalation techniques.",
+    descriptionPt:
+      "Um repositório estruturado de templates de comandos de segurança ofensiva com substituição dinâmica de variáveis para testes de penetração éticos. Abrange enumeração web, reverse shells e técnicas de escalação de privilégios.",
+    link: "https://inzelsec.github.io/easy-command/",
+  },
+  {
     id: 1,
     title: "Net Listener",
     description:
