@@ -49,7 +49,6 @@ const languages = [
   { name: "English", namePt: "Inglês", level: "Advanced/Fluent", levelPt: "Avançado/Fluente" },
   { name: "Spanish", namePt: "Espanhol", level: "Basic-Intermediate", levelPt: "Básico-Intermediário" },
   { name: "German", namePt: "Alemão", level: "Basic-Intermediate", levelPt: "Básico-Intermediário" },
-  { name: "Russian", namePt: "Russo", level: "Basic", levelPt: "Básico" },
   { name: "Portuguese", namePt: "Português", level: "Native", levelPt: "Nativo" },
 
 ];
