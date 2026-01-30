@@ -173,7 +173,8 @@ const Articles = () => {
   const { t, language } = useLanguage();
 
   const formatDate = (dateString: string) => {
-    const date = new Date(dateString);
+    const [year, month, day] = dateString.split("-").map(Number);
+    const date = new Date(year, month - 1, day);
     return date.toLocaleDateString(language === "pt" ? "pt-BR" : "en-US", {
       year: "numeric",
       month: "long",
@@ -182,13 +183,12 @@ const Articles = () => {
   };
 
   const getMonthYear = (dateString: string) => {
-    const date = new Date(dateString);
-    const month = date.toLocaleDateString(language === "pt" ? "pt-BR" : "en-US", {
+    const [year, month, day] = dateString.split("-").map(Number);
+    const date = new Date(year, month - 1, day);
+    const monthName = date.toLocaleDateString(language === "pt" ? "pt-BR" : "en-US", {
       month: "long",
     });
-    const year = date.getFullYear();
-    // Capitalize first letter
-    const capitalizedMonth = month.charAt(0).toUpperCase() + month.slice(1);
+    const capitalizedMonth = monthName.charAt(0).toUpperCase() + monthName.slice(1);
     return `${capitalizedMonth} ${year}`;
   };
 
