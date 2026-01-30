@@ -14,6 +14,28 @@ export interface Article {
 
 export const articles: Article[] = [
   {
+    id: "linux-privesc-suid-sgid",
+    title: "Linux Privilege Escalation: SUID/SGID (with CTF examples)",
+    summaryPt:
+      "Guia que explica o que são SUID/SGID, como enumerar binários com find e como validar caminhos de exploração via GTFOBins, incluindo exemplos práticos de CTFs do TryHackMe.",
+    summaryEn:
+      "A guide that explains what SUID/SGID are, how to enumerate binaries with find, and how to validate exploitation paths with GTFOBins, including practical TryHackMe CTF examples.",
+    date: "2026-01-29",
+    tags: ["PrivEsc"],
+    link: "https://medium.com/@inzelsec/linux-privilege-escalation-suid-sgid-with-ctf-examples-e1fd9a06868c",
+  },  
+  {
+    id: "linux-privesc-sudo",
+    title: "Linux Privilege Escalation: Sudo",
+    summaryPt:
+      "Guia que demonstra como enumerar permissões com sudo -l e explorar configurações inseguras, com exemplos práticos (como tcpdump -z e abuso de LD_PRELOAD quando permitido).",
+    summaryEn:
+      "A guide that shows how to enumerate permissions with sudo -l and abuse insecure sudo configurations, with practical examples (such as tcpdump -z and LD_PRELOAD abuse when allowed).",
+    date: "2026-01-29",
+    tags: ["PrivEsc"],
+    link: "https://medium.com/@inzelsec/linux-privilege-escalation-sudo-with-examples-b2a1b8b6cea2",
+  },
+  {
     id: "linux-privesc-manual-enumeration",
     title: "Linux Privilege Escalation: Manual Enumeration & Information Gathering",
     summaryPt:
