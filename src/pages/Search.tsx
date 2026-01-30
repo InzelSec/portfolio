@@ -9,13 +9,15 @@ const Search = () => {
   const { t, language } = useLanguage();
 
   const formatDate = (dateString: string) => {
-    const date = new Date(dateString);
+    const [year, month, day] = dateString.split("-").map(Number);
+    const date = new Date(year, month - 1, day);
     return date.toLocaleDateString(language === "pt" ? "pt-BR" : "en-US", {
       year: "numeric",
       month: "long",
       day: "numeric",
     });
   };
+
 
   const getSummary = (article: { summaryPt: string; summaryEn: string }) => {
     return language === "pt" ? article.summaryPt : article.summaryEn;
