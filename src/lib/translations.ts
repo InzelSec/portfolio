@@ -65,16 +65,16 @@ export const translations: Record<Language, TranslationSchema> = {
       home: "Home",
       about: "About",
       projects: "Projects",
-      articles: "Articles",
+      articles: "Posts",
       search: "Search",
     },
     // Home page
     home: {
       subtitle: "Offensive Security & Pentest",
       description:
-        "Technical portfolio in cybersecurity with projects, scripts, articles, and professional journey.",
+        "Technical portfolio in cybersecurity with projects, scripts, posts, and professional journey.",
       projects: "Projects",
-      articles: "Articles",
+      articles: "Posts",
     },
     // About page
     about: {
@@ -90,7 +90,7 @@ export const translations: Record<Language, TranslationSchema> = {
       contactDescriptions: {
         linkedin: "Connect professionally",
         github: "Explore my repositories",
-        medium: "Read my articles",
+        medium: "Read my posts",
         tryhackme: "View my CTF progress",
         youtube: "Watch my content",
         email: "Get in touch",
@@ -105,17 +105,17 @@ export const translations: Record<Language, TranslationSchema> = {
     },
     // Articles page
     articles: {
-      title: "Articles",
+      title: "Posts",
       subtitle: "Write-ups, tutorials, and notes from my security research",
       readMore: "Read more",
     },
     // Search page
     search: {
       title: "Search",
-      subtitle: "Find articles by title, content, or tags",
-      placeholder: "Search articles...",
-      startTyping: "Start typing to search through articles",
-      noResults: 'No articles found for "{query}"',
+      subtitle: "Find posts by title, content, or tags",
+      placeholder: "Search posts...",
+      startTyping: "Start typing to search through posts",
+      noResults: 'No posts found for "{query}"',
       foundResults: "Found {count} result",
       foundResultsPlural: "Found {count} results",
     },
@@ -130,16 +130,16 @@ export const translations: Record<Language, TranslationSchema> = {
       home: "Início",
       about: "Sobre",
       projects: "Projetos",
-      articles: "Artigos",
+      articles: "Posts",
       search: "Buscar",
     },
     // Home page
     home: {
       subtitle: "Segurança Ofensiva & Pentest",
       description:
-        "Portfólio técnico em cibersegurança com projetos, scripts, artigos e trajetória profissional.",
+        "Portfólio técnico em cibersegurança com projetos, scripts, posts e trajetória profissional.",
       projects: "Projetos",
-      articles: "Artigos",
+      articles: "Posts",
     },
     // About page
     about: {
@@ -155,7 +155,7 @@ export const translations: Record<Language, TranslationSchema> = {
       contactDescriptions: {
         linkedin: "Conecte-se profissionalmente",
         github: "Explore meus repositórios",
-        medium: "Leia meus artigos",
+        medium: "Leia meus posts",
         tryhackme: "Veja meu progresso em CTFs",
         youtube: "Assista meu conteúdo",
         email: "Entre em contato",
@@ -170,17 +170,17 @@ export const translations: Record<Language, TranslationSchema> = {
     },
     // Articles page
     articles: {
-      title: "Artigos",
+      title: "Posts",
       subtitle: "Write-ups, tutoriais e notas da minha pesquisa em segurança",
       readMore: "Leia mais",
     },
     // Search page
     search: {
       title: "Buscar",
-      subtitle: "Encontre artigos por título, conteúdo ou tags",
-      placeholder: "Buscar artigos...",
-      startTyping: "Comece a digitar para buscar artigos",
-      noResults: 'Nenhum artigo encontrado para "{query}"',
+      subtitle: "Encontre posts por título, conteúdo ou tags",
+      placeholder: "Buscar posts...",
+      startTyping: "Comece a digitar para buscar posts",
+      noResults: 'Nenhum post encontrado para "{query}"',
       foundResults: "Encontrado {count} resultado",
       foundResultsPlural: "Encontrados {count} resultados",
     },
